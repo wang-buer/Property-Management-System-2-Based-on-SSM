@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KaifashangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KaifashangEntity" id="kaifashangMap">
+        <result property="kaifashangmingcheng" column="kaifashangmingcheng"/>
+        <result property="zizhijibie" column="zizhijibie"/>
+        <result property="jingyingdizhi" column="jingyingdizhi"/>
+        <result property="faren" column="faren"/>
+        <result property="yingyezhizhao" column="yingyezhizhao"/>
+        <result property="dianhua" column="dianhua"/>
+        <result property="youbian" column="youbian"/>
+        <result property="qiyegaikuang" column="qiyegaikuang"/>
+        <result property="tupian" column="tupian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KaifashangVO" >
+		SELECT * FROM kaifashang  kaifashang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KaifashangVO" >
+		SELECT  kaifashang.* FROM kaifashang  kaifashang 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KaifashangView" >
+
+		SELECT  kaifashang.* FROM kaifashang  kaifashang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KaifashangView" >
+		SELECT * FROM kaifashang  kaifashang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
